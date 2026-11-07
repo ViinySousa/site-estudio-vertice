@@ -1,0 +1,109 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background: var(--color-bg);
+  color: var(--color-ink);
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-block: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-olive);
+  color: var(--color-white);
+}
+
+/* Acesso direto ao conteúdo por teclado */
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
+
+  padding: 0.75rem 1rem;
+  background: var(--color-white);
+
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

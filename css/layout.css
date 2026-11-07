@@ -1,0 +1,278 @@
+
+
+/* ========================================
+   SITE SHELL
+======================================== */
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+
+  width: min(
+    calc(100% - 2 * var(--page-gutter)),
+    var(--container-max)
+  );
+
+  min-height: calc(100svh - 3rem);
+  margin: 1.5rem auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: clamp(1.5rem, 2.2vw, 2rem);
+
+  background: var(--color-surface);
+  box-shadow:
+    0 24px 70px rgba(54, 38, 25, 0.14);
+
+  overflow: clip;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  position: relative;
+  z-index: 30;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(1rem, 2vw, 2.5rem);
+
+  min-height: 112px;
+  padding:
+    1.25rem
+    clamp(1.5rem, 2.8vw, 3rem);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  min-width: 0;
+}
+
+.site-header__menu {
+  display: none;
+}
+
+/* ========================================
+   NAVEGAÇÃO SUPERIOR
+======================================== */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(0.25rem, 0.65vw, 0.75rem);
+  padding: 0.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 12px 32px rgba(50, 43, 30, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.side-nav {
+  position: absolute;
+  z-index: 20;
+
+  top: clamp(158px, 18%, 220px);
+  left: clamp(1rem, 1.5vw, 1.5rem);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.7rem;
+  width: 78px;
+  padding: 1rem 0.65rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 250, 245, 0.53);
+
+  box-shadow:
+    0 20px 40px rgba(65, 44, 28, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.side-nav__divider {
+  width: 27px;
+  height: 1px;
+  margin-block: 0.25rem;
+  background: rgba(37, 40, 25, 0.4);
+}
+
+.section-anchor {
+  min-height: 1px;
+  scroll-margin-top: 6rem;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1180px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 96px;
+  }
+
+  .site-header__menu {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% - 0.25rem);
+    right: clamp(1.5rem, 2.8vw, 3rem);
+    left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: min(300px, calc(100% - 3rem));
+    padding: 0.75rem;
+
+    border-radius: 1.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity var(--duration-normal) var(--ease-out),
+      transform var(--duration-normal) var(--ease-out),
+      visibility var(--duration-normal);
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .side-nav {
+    display: none;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 640px) {
+  .site-shell {
+    width: calc(100% - 1.25rem);
+    min-height: calc(100svh - 1.25rem);
+    margin-block: 0.625rem;
+    border-radius: 1.5rem;
+  }
+
+  .site-header {
+    min-height: 80px;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .site-header__actions {
+    gap: 0.5rem;
+  }
+
+  .site-header__cta {
+    display: none !important;
+  }
+
+  .site-header__search {
+    display: none !important;
+  }
+
+  .site-nav {
+    right: 1rem;
+  }
+}
+
+/* ========================================
+   ETAPA 03 — BACKDROP FOTOGRÁFICO
+======================================== */
+
+.site-backdrop {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+
+  display: block;
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.site-backdrop__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* O conteúdo permanece acima da fotografia */
+.site-shell > main {
+  position: relative;
+  z-index: 1;
+}
+
+/* O header continua acima da hero e dos overlays */
+.site-header {
+  z-index: 30;
+}
+
+/* Camada sutil para o header */
+.site-header::before {
+  position: absolute;
+  z-index: -1;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(246, 236, 226, 0.33),
+    rgba(246, 236, 226, 0)
+  );
+
+  content: "";
+  pointer-events: none;
+}
+
+@media (max-width: 1180px) {
+  .site-backdrop__image {
+    object-position: 58% center;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-backdrop__image {
+    object-position: 62% center;
+  }
+}

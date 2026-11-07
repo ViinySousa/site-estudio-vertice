@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9ded1">
+
+  <title>Estúdio Vértice | Arquitetura com Identidade</title>
+  <meta name="description" content="Arquitetura, interiores e paisagismo autorais. Espaços que conectam matéria, luz e rotina com sofisticação.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Estúdio Vértice">
+  <meta property="og:description" content="Arquitetura com identidade e permanência.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image"
+    href="./images/hero-arquitetura-1920.webp"
+    imagesrcset="./images/hero-arquitetura-1280.webp 1280w, ./images/hero-arquitetura-1920.webp 1920w"
+    imagesizes="(max-width: 1180px) 100vw, 1600px">
+
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/pages/home.css">
+
+  <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">
+    Pular para o conteúdo
+  </a>
+
+  <!-- Biblioteca SVG compartilhada -->
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24">
+      <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>
+    </symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24">
+      <path d="m12 2 9 5-9 5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/>
+    </symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1"/>
+      <rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="3" y="14" width="7" height="7" rx="1"/>
+      <rect x="14" y="14" width="7" height="7" rx="1"/>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24">
+      <path d="M20 4C9 4 4 9 4 16a4 4 0 0 0 4 4c7 0 12-5 12-16Z"/>
+      <path d="M4 20c3-6 7-10 13-13"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m3 6 9 7 9-7"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m16 16 5 5"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M3 12h18m-7-7 7 7-7 7"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16M4 12h16M4 17h16"/>
+    </symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24">
+      <path d="M4 21V11h6V6h5V2h5v19M2 21h20M7 15h3m-3 3h3m4-9h2m-2 4h2m-2 4h2"/>
+    </symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24">
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M2 21v-3a7 7 0 0 1 14 0v3H2zM17 3a4 4 0 0 1 0 8m1 3a6 6 0 0 1 4 6"/>
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2c-5 5-5 15 0 20m0-20c5 5 5 15 0 20M4.8 6h14.4M4.8 18h14.4"/>
+    </symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24">
+      <path d="m8 5 11 7-11 7z"/>
+    </symbol>
+  </svg>
+
+  <div class="site-shell" id="inicio">
+
+    <!-- Fundo fotográfico -->
+    <picture class="site-backdrop" aria-hidden="true">
+      <source media="(max-width: 640px)"
+        srcset="./images/hero-arquitetura-768.webp">
+      <source media="(max-width: 1180px)"
+        srcset="./images/hero-arquitetura-1280.webp">
+      <img class="site-backdrop__image"
+        src="./images/hero-arquitetura-1920.webp"
+        width="1536" height="1024" alt=""
+        fetchpriority="high" decoding="async">
+    </picture>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a class="site-brand" href="#inicio"
+        aria-label="Estúdio Vértice, início">
+        <span class="site-brand__symbol" aria-hidden="true">V</span>
+        <span class="site-brand__divider" aria-hidden="true"></span>
+        <span class="site-brand__name">Estúdio Vértice</span>
+      </a>
+
+      <nav class="site-nav" id="primary-navigation"
+        aria-label="Navegação principal" data-navigation>
+        <a class="site-nav__link is-active" href="#inicio"
+          aria-current="page">Início</a>
+        <a class="site-nav__link" href="#projetos">Projetos</a>
+        <a class="site-nav__link" href="#servicos">Serviços</a>
+        <a class="site-nav__link" href="#sobre">Sobre</a>
+        <a class="site-nav__link" href="#contato">Contato</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="icon-button site-header__search"
+          type="button" aria-label="Abrir navegação rápida"
+          aria-expanded="false" aria-controls="quick-search"
+          data-search-toggle>
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-search"/>
+          </svg>
+        </button>
+
+        <a class="button button--accent site-header__cta"
+          href="#contato">
+          <span>Iniciar Projeto</span>
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-arrow"/>
+          </svg>
+        </a>
+
+        <button class="icon-button site-header__menu"
+          type="button" aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-menu-toggle>
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-menu"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="quick-search" id="quick-search"
+        data-search-panel hidden>
+        <p class="quick-search__label">Acesso rápido</p>
+        <a href="#projetos">Explorar projetos</a>
+        <a href="#servicos">Conhecer serviços</a>
+        <a href="#sobre">Nosso estúdio</a>
+        <a href="#contato">Fale com a equipe</a>
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="side-nav" aria-label="Navegação lateral">
+      <a class="side-nav__item is-active" href="#inicio"
+        aria-label="Início" aria-current="page" title="Início">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-home"/>
+        </svg>
+      </a>
+      <a class="side-nav__item" href="#projetos"
+        aria-label="Projetos" title="Projetos">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-layers"/>
+        </svg>
+      </a>
+      <a class="side-nav__item" href="#servicos"
+        aria-label="Serviços" title="Serviços">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-grid"/>
+        </svg>
+      </a>
+      <a class="side-nav__item" href="#sobre"
+        aria-label="Sobre" title="Sobre">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-leaf"/>
+        </svg>
+      </a>
+      <a class="side-nav__item" href="#contato"
+        aria-label="Contato" title="Contato">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-mail"/>
+        </svg>
+      </a>
+
+      <span class="side-nav__divider" aria-hidden="true"></span>
+
+      <a class="side-nav__item side-nav__item--bottom"
+        href="#projetos" aria-label="Explorar projetos"
+        title="Explorar projetos">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-play"/>
+        </svg>
+      </a>
+    </nav>
+
+    <main id="conteudo">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">
+            <span>Arquitetura</span>
+            <span class="hero__eyebrow-line" aria-hidden="true"></span>
+            <span>Interiores</span>
+            <span class="hero__eyebrow-line" aria-hidden="true"></span>
+            <span>Paisagismo</span>
+          </p>
+
+          <h1 class="hero__title" id="hero-title">
+            Arquitetura com
+            identidade e
+            <em>permanência</em>
+          </h1>
+
+          <p class="hero__description">
+            Criamos espaços autorais que conectam
+            matéria, luz e rotina com sofisticação,
+            conforto e intenção.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary hero__button"
+              href="#projetos">
+              <span>Ver Projetos</span>
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-arrow"/>
+              </svg>
+            </a>
+
+            <a class="hero__secondary" href="#sobre">
+              <span class="hero__secondary-icon" aria-hidden="true">
+                <svg class="icon">
+                  <use href="#icon-arrow"/>
+                </svg>
+              </span>
+              <span class="hero__secondary-label">
+                Conhecer Estúdio
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- FAIXA INFERIOR -->
+        <div class="hero__bottom" id="projetos">
+
+          <!-- CARROSSEL DE PROJETOS -->
+          <article class="featured-project" aria-label="Projetos em destaque"
+            aria-roledescription="carrossel" data-carousel>
+
+            <div class="featured-project__media">
+              <img
+                class="featured-project__image"
+                src="./images/projeto01-bg.jpg"
+                width="800" height="600"
+                alt="Fotografia do projeto Casa Mirante"
+                decoding="async"
+                data-project-image
+              >
+            </div>
+
+            <div class="featured-project__body">
+              <p class="featured-project__eyebrow">
+                Projeto em destaque
+              </p>
+
+              <div class="featured-project__details">
+                <h2 class="featured-project__title"
+                  data-project-title>Casa Mirante</h2>
+
+                <p class="featured-project__description"
+                  data-project-description>
+                  Uma residência que valoriza a paisagem,
+                  a luz natural e a integração com o entorno.
+                </p>
+
+                <a class="featured-project__link"
+                  href="#contato" data-project-link>
+                  Conhecer Projeto
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#icon-arrow"/>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="featured-project__controls">
+
+                <div class="featured-project__dots"
+                  role="group" aria-label="Selecionar projeto">
+                  <button class="featured-project__dot is-active"
+                    type="button" data-slide-to="0"
+                    aria-label="Mostrar projeto 1"
+                    aria-pressed="true"></button>
+                  <button class="featured-project__dot"
+                    type="button" data-slide-to="1"
+                    aria-label="Mostrar projeto 2"
+                    aria-pressed="false"></button>
+                  <button class="featured-project__dot"
+                    type="button" data-slide-to="2"
+                    aria-label="Mostrar projeto 3"
+                    aria-pressed="false"></button>
+                </div>
+
+                <div class="featured-project__arrows">
+                  <button class="featured-project__arrow"
+                    type="button" data-carousel-prev
+                    aria-label="Projeto anterior">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#icon-arrow"/>
+                    </svg>
+                  </button>
+
+                  <button class="featured-project__arrow featured-project__arrow--next"
+                    type="button" data-carousel-next
+                    aria-label="Próximo projeto">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#icon-arrow"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <span class="sr-only" aria-live="polite"
+              aria-atomic="true" data-carousel-status></span>
+          </article>
+
+          <!-- PAINEL DE INDICADORES -->
+          <aside class="studio-stats" aria-label="Indicadores do estúdio">
+            <div class="studio-stats__item">
+              <svg class="icon studio-stats__icon" aria-hidden="true">
+                <use href="#icon-building"/>
+              </svg>
+              <strong class="studio-stats__number">210+</strong>
+              <span class="studio-stats__label">Projetos</span>
+            </div>
+
+            <div class="studio-stats__item">
+              <svg class="icon studio-stats__icon" aria-hidden="true">
+                <use href="#icon-users"/>
+              </svg>
+              <strong class="studio-stats__number">98+</strong>
+              <span class="studio-stats__label">Clientes</span>
+            </div>
+
+            <div class="studio-stats__item">
+              <svg class="icon studio-stats__icon" aria-hidden="true">
+                <use href="#icon-globe"/>
+              </svg>
+              <strong class="studio-stats__number">14</strong>
+              <span class="studio-stats__label">Países</span>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- Âncoras provisórias -->
+      <section id="servicos" class="section-anchor"
+        aria-label="Serviços"></section>
+      <section id="sobre" class="section-anchor"
+        aria-label="Sobre o estúdio"></section>
+      <section id="contato" class="section-anchor"
+        aria-label="Contato"></section>
+    </main>
+  </div>
+</body>
+</html>

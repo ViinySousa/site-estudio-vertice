@@ -1,0 +1,339 @@
+
+/* ========================================
+   ÍCONES
+======================================== */
+
+.svg-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
+
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.site-brand__symbol {
+  display: inline-block;
+
+  color: var(--color-olive);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4.3vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: -0.13em;
+
+  transform: scaleX(1.15);
+  transform-origin: left center;
+}
+
+.site-brand__divider {
+  display: block;
+  width: 1px;
+  height: 33px;
+  margin-inline: 0.4rem;
+
+  background: rgba(37, 40, 25, 0.5);
+}
+
+.site-brand__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.85rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+/* ========================================
+   NAVEGAÇÃO PRINCIPAL
+======================================== */
+
+.site-nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 43px;
+  padding: 0.6rem clamp(0.9rem, 1.5vw, 1.75rem);
+
+  border-radius: var(--radius-pill);
+
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+
+  transition:
+    background-color var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.site-nav__link:hover {
+  background: rgba(53, 59, 28, 0.08);
+}
+
+.site-nav__link.is-active {
+  background: var(--color-olive);
+  color: var(--color-white);
+}
+
+.site-nav__link.is-active:hover {
+  background: var(--color-olive);
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: clamp(1.5rem, 2vw, 2.5rem);
+  min-height: 53px;
+  padding: 0.85rem 1.75rem;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+
+  font-size: 0.925rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button .icon {
+  width: 21px;
+  height: 21px;
+
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.button:hover .icon {
+  transform: translateX(4px);
+}
+
+.button--primary {
+  background: var(--color-olive);
+  color: var(--color-white);
+}
+
+.button--primary:hover {
+  background: #4c552a;
+}
+
+.button--accent {
+  background: var(--color-terracotta);
+  color: var(--color-white);
+}
+
+.button--accent:hover {
+  background: #7c3d20;
+}
+
+/* ========================================
+   ICON BUTTON
+======================================== */
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 53px;
+  height: 53px;
+  flex-shrink: 0;
+
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.4);
+  color: var(--color-ink);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--duration-fast) ease,
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   SIDEBAR ITEMS
+======================================== */
+
+.side-nav__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: var(--color-ink);
+
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+.side-nav__item .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.side-nav__item:hover {
+  background: rgba(53, 59, 28, 0.1);
+  transform: scale(1.06);
+}
+
+.side-nav__item.is-active {
+  background: var(--color-olive);
+  color: var(--color-white);
+}
+
+.side-nav__item.is-active .icon {
+  fill: currentColor;
+  stroke-width: 1.2;
+}
+
+.side-nav__item--bottom {
+  border: 1px solid var(--color-ink);
+}
+
+.side-nav__item--bottom .icon {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+}
+
+/* ========================================
+   BUSCA / ACESSO RÁPIDO
+======================================== */
+
+.quick-search {
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  right: clamp(1.5rem, 2.8vw, 3rem);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  width: 255px;
+  padding: 1rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 1.5rem;
+
+  background: rgba(248, 241, 233, 0.96);
+  box-shadow: 0 15px 45px rgba(38, 31, 20, 0.15);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.quick-search[hidden] {
+  display: none;
+}
+
+.quick-search__label {
+  padding: 0.4rem 0.75rem;
+  color: var(--color-ink-soft);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.quick-search a {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.quick-search a:hover {
+  background: rgba(53, 59, 28, 0.08);
+}
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 1180px) {
+  .site-nav__link {
+    justify-content: flex-start;
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-brand__symbol {
+    font-size: 3rem;
+  }
+
+  .site-brand__name {
+    font-size: clamp(1rem, 4.8vw, 1.3rem);
+  }
+
+  .site-brand__divider {
+    height: 24px;
+    margin-inline: 0.1rem;
+  }
+
+  .icon-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .button .icon,
+  .icon-button,
+  .side-nav__item,
+  .site-nav {
+    transition: none;
+  }
+}

@@ -1,0 +1,66 @@
+
+:root {
+  /* Cores principais */
+  --color-bg: #e9ded1;
+  --color-surface: #f5eadf;
+  --color-surface-soft: #f8f1e9;
+
+  --color-ink: #252819;
+  --color-ink-soft: #484739;
+
+  --color-olive: #353b1c;
+  --color-terracotta: #99502b;
+
+  --color-white: #ffffff;
+  --color-line: rgba(53, 59, 28, 0.18);
+
+  /* Tipografia */
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: clamp(1rem, 1.1vw, 1.125rem);
+
+  --text-hero: clamp(3rem, 5vw, 5.75rem);
+
+  /* Espaçamentos */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Layout */
+  --container-max: 1600px;
+  --page-gutter: clamp(1rem, 3.3vw, 4rem);
+
+  /* Bordas */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 500ms;
+  --duration-slow: 900ms;
+}
+
+/* ========================================
+   ETAPA 03 — TIPOGRAFIA EDITORIAL
+======================================== */
+
+:root {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+
+  --text-hero: clamp(3.75rem, 5.4vw, 6.5rem);
+
+  --color-overlay-warm: #f5e7d9;
+  --color-overlay-deep: #c69f7e;
+}
